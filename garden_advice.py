@@ -1,28 +1,39 @@
-# Hardcoded values for the season and plant type
-season = "summer"  # TODO: Replace with input() to allow user interaction.
-plant_type = "flower"  # TODO: Replace with input() to allow user interaction.
+# Get user input for the season and plant type
+print("Welcome to the Garden Advice App!")
+print("-" * 35)
+
+season = input("Enter the current season (spring/summer/autumn/winter): ").lower().strip()
+plant_type = input("Enter your plant type (flower/vegetable): ").lower().strip()
 
 # Variable to hold gardening advice
 advice = ""
 
 # Determine advice based on the season
-if season == "summer":
+if season in ["summer"]:
     advice += "Water your plants regularly and provide some shade.\n"
-elif season == "winter":
+elif season in ["winter"]:
     advice += "Protect your plants from frost with covers.\n"
+elif season in ["spring"]:
+    advice += "Perfect time for planting and fertilizing.\n"
+elif season in ["autumn", "fall"]:
+    advice += "Prepare your garden for winter and harvest vegetables.\n"
 else:
-    advice += "No advice for this season.\n"
+    advice += f"No specific advice for '{season}'. Please enter spring, summer, autumn, or winter.\n"
 
 # Determine advice based on the plant type
-if plant_type == "flower":
+if plant_type in ["flower", "flowers"]:
     advice += "Use fertiliser to encourage blooms."
-elif plant_type == "vegetable":
+elif plant_type in ["vegetable", "vegetables", "veggie", "veggies"]:
     advice += "Keep an eye out for pests!"
 else:
-    advice += "No advice for this type of plant."
+    advice += f"No specific advice for '{plant_type}'. Please enter 'flower' or 'vegetable'."
 
 # Print the generated advice
+print("\n" + "="*40)
+print("GARDEN ADVICE")
+print("="*40)
 print(advice)
+print("="*40)
 
 # TODO: Examples of possible features to add:
 # - Add detailed comments explaining each block of code.
